@@ -3,365 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocusFlow - Digital Detox Solution</title>
+    <title>FocusFlow - Simple Digital Detox</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <i class="fas fa-leaf"></i>
-                <span>FocusFlow</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#focus-mode" class="nav-link">Focus Mode</a></li>
-                <li><a href="#tracker" class="nav-link">Tracker</a></li>
-                <li><a href="#goals" class="nav-link">Goals</a></li>
-                <li><a href="#breaks" class="nav-link">Breaks</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Take Control of Your Digital Life</h1>
-            <p>FocusFlow helps you develop healthier digital habits through mindful usage, not restriction.</p>
-            <button class="cta-button" onclick="scrollToSection('focus-mode')">
-                <i class="fas fa-play"></i>
-                Start Your Journey
-            </button>
-        </div>
-        <div class="hero-stats">
-            <div class="stat-card">
-                <h3 id="total-focus-time">0h 0m</h3>
-                <p>Total Focus Time</p>
-            </div>
-            <div class="stat-card">
-                <h3 id="streak-counter">0</h3>
-                <p>Day Streak</p>
-            </div>
-            <div class="stat-card">
-                <h3 id="goals-completed">0</h3>
-                <p>Goals Completed</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Focus Mode Section -->
-    <section id="focus-mode" class="focus-section">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <h2><i class="fas fa-brain"></i> Focus Mode</h2>
-            <p>Set a timer and enter deep focus mode. Minimize distractions and maximize productivity.</p>
-            
-            <div class="focus-timer">
-                <div class="timer-display">
-                    <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
-                </div>
-                <div class="timer-controls">
-                    <button id="timer-start" class="timer-btn start-btn">
-                        <i class="fas fa-play"></i> Start
-                    </button>
-                    <button id="timer-pause" class="timer-btn pause-btn" disabled>
-                        <i class="fas fa-pause"></i> Pause
-                    </button>
-                    <button id="timer-reset" class="timer-btn reset-btn">
-                        <i class="fas fa-stop"></i> Reset
-                    </button>
-                </div>
-                <div class="timer-presets">
-                    <button class="preset-btn" data-minutes="15">15 min</button>
-                    <button class="preset-btn active" data-minutes="25">25 min</button>
-                    <button class="preset-btn" data-minutes="45">45 min</button>
-                    <button class="preset-btn" data-minutes="60">60 min</button>
-                </div>
-            </div>
-
-            <div class="focus-modes">
-                <div class="mode-card active" data-mode="focus">
-                    <i class="fas fa-brain"></i>
-                    <h3>Focus</h3>
-                    <p>Deep work sessions</p>
-                </div>
-                <div class="mode-card" data-mode="break">
-                    <i class="fas fa-coffee"></i>
-                    <h3>Short Break</h3>
-                    <p>5-minute breaks</p>
-                </div>
-                <div class="mode-card" data-mode="long-break">
-                    <i class="fas fa-tree"></i>
-                    <h3>Long Break</h3>
-                    <p>15-minute breaks</p>
-                </div>
-            </div>
+            <h1><i class="fas fa-leaf"></i> FocusFlow</h1>
+            <p>Take control of your digital life</p>
         </div>
-    </section>
+    </header>
 
-    <!-- Screen Time Tracker Section -->
-    <section id="tracker" class="tracker-section">
+    <!-- Main Content -->
+    <main class="main">
         <div class="container">
-            <h2><i class="fas fa-chart-line"></i> Screen Time Tracker</h2>
-            <p>Monitor your digital habits and see your progress over time.</p>
             
-            <div class="tracker-dashboard">
-                <div class="today-stats">
-                    <h3>Today's Usage</h3>
-                    <div class="usage-display">
-                        <div class="usage-circle">
-                            <canvas id="usage-chart" width="200" height="200"></canvas>
-                            <div class="usage-text">
-                                <span id="today-hours">0h</span>
-                                <span id="today-minutes">0m</span>
-                            </div>
-                        </div>
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <h2>Your Progress Today</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 id="focus-time">0 min</h3>
+                        <p>Focus Time</p>
                     </div>
-                    <div class="app-breakdown">
-                        <h4>App Breakdown</h4>
-                        <div class="app-list">
-                            <div class="app-item">
-                                <span class="app-name">Social Media</span>
-                                <span class="app-time">2h 30m</span>
-                            </div>
-                            <div class="app-item">
-                                <span class="app-name">Entertainment</span>
-                                <span class="app-time">1h 45m</span>
-                            </div>
-                            <div class="app-item">
-                                <span class="app-name">Productivity</span>
-                                <span class="app-time">45m</span>
-                            </div>
-                        </div>
+                    <div class="stat-card">
+                        <i class="fas fa-coffee"></i>
+                        <h3 id="break-count">0</h3>
+                        <p>Breaks Taken</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3 id="streak">0</h3>
+                        <p>Day Streak</p>
                     </div>
                 </div>
-                
-                <div class="weekly-chart">
-                    <h3>Weekly Overview</h3>
-                    <canvas id="weekly-chart" width="400" height="200"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Mindful Break Reminders Section -->
-    <section id="breaks" class="breaks-section">
-        <div class="container">
-            <h2><i class="fas fa-clock"></i> Mindful Break Reminders</h2>
-            <p>Set personalized reminders to take healthy breaks throughout your day.</p>
-            
-            <div class="break-settings">
-                <div class="setting-card">
-                    <h3>Break Interval</h3>
-                    <div class="interval-controls">
-                        <button class="interval-btn" data-interval="30">30 min</button>
-                        <button class="interval-btn active" data-interval="60">60 min</button>
-                        <button class="interval-btn" data-interval="90">90 min</button>
-                        <button class="interval-btn" data-interval="120">2 hours</button>
+            <!-- Timer Section -->
+            <section class="timer-section">
+                <h2>Focus Timer</h2>
+                <div class="timer-card">
+                    <div class="timer-display">
+                        <span id="minutes">25</span>:<span id="seconds">00</span>
+                    </div>
+                    
+                    <div class="timer-buttons">
+                        <button id="start-btn" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <button id="pause-btn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline">
+                            <i class="fas fa-stop"></i> Reset
+                        </button>
+                    </div>
+
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-time="15">15 min</button>
+                        <button class="preset-btn active" data-time="25">25 min</button>
+                        <button class="preset-btn" data-time="45">45 min</button>
                     </div>
                 </div>
-                
-                <div class="setting-card">
-                    <h3>Break Activities</h3>
-                    <div class="activity-list">
-                        <label class="activity-option">
-                            <input type="checkbox" checked>
-                            <span>Take a short walk</span>
-                        </label>
-                        <label class="activity-option">
-                            <input type="checkbox" checked>
-                            <span>Deep breathing exercise</span>
-                        </label>
-                        <label class="activity-option">
-                            <input type="checkbox">
-                            <span>Stretch your body</span>
-                        </label>
-                        <label class="activity-option">
-                            <input type="checkbox">
-                            <span>Hydrate yourself</span>
-                        </label>
+            </section>
+
+            <!-- Break Reminder Section -->
+            <section class="break-section">
+                <h2>Break Reminders</h2>
+                <div class="break-card">
+                    <div class="break-settings">
+                        <label for="break-interval">Remind me every:</label>
+                        <select id="break-interval">
+                            <option value="30">30 minutes</option>
+                            <option value="60" selected>1 hour</option>
+                            <option value="90">1.5 hours</option>
+                        </select>
                     </div>
-                </div>
-                
-                <div class="setting-card">
-                    <h3>Notification Settings</h3>
-                    <div class="notification-toggle">
+                    
+                    <div class="break-toggle">
                         <label class="switch">
-                            <input type="checkbox" id="break-notifications" checked>
+                            <input type="checkbox" id="break-enabled" checked>
                             <span class="slider"></span>
                         </label>
                         <span>Enable break reminders</span>
                     </div>
                 </div>
-            </div>
-            
-            <div class="break-suggestions">
-                <h3>Mindful Break Ideas</h3>
-                <div class="suggestion-cards">
-                    <div class="suggestion-card">
-                        <i class="fas fa-walking"></i>
-                        <h4>Walk & Breathe</h4>
-                        <p>Take a 5-minute walk while focusing on your breathing</p>
-                    </div>
-                    <div class="suggestion-card">
-                        <i class="fas fa-eye"></i>
-                        <h4>20-20-20 Rule</h4>
-                        <p>Look at something 20 feet away for 20 seconds every 20 minutes</p>
-                    </div>
-                    <div class="suggestion-card">
-                        <i class="fas fa-water"></i>
-                        <h4>Hydration Break</h4>
-                        <p>Drink water and do light stretching</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Gamified Goals Section -->
-    <section id="goals" class="goals-section">
-        <div class="container">
-            <h2><i class="fas fa-trophy"></i> Gamified Goals</h2>
-            <p>Set personal goals, track progress, and earn achievements on your digital wellness journey.</p>
-            
-            <div class="goals-dashboard">
-                <div class="current-goals">
-                    <h3>Current Goals</h3>
+            <!-- Quick Goals Section -->
+            <section class="goals-section">
+                <h2>Daily Goals</h2>
+                <div class="goals-grid">
                     <div class="goal-card">
-                        <div class="goal-header">
-                            <h4>Daily Screen Time Limit</h4>
-                            <span class="goal-progress">60%</span>
+                        <h3>Focus Sessions</h3>
+                        <div class="goal-progress">
+                            <span id="session-progress">0 / 3</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="session-bar"></div>
+                            </div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
-                        </div>
-                        <p>Stay under 6 hours daily</p>
                     </div>
                     
                     <div class="goal-card">
-                        <div class="goal-header">
-                            <h4>Focus Sessions</h4>
-                            <span class="goal-progress">3/5</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
-                        </div>
-                        <p>Complete 5 focus sessions this week</p>
-                    </div>
-                    
-                    <div class="goal-card">
-                        <div class="goal-header">
-                            <h4>Mindful Breaks</h4>
-                            <span class="goal-progress">8/10</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%"></div>
-                        </div>
-                        <p>Take 10 mindful breaks this week</p>
-                    </div>
-                </div>
-                
-                <div class="achievements">
-                    <h3>Achievements</h3>
-                    <div class="achievement-grid">
-                        <div class="achievement-card earned">
-                            <i class="fas fa-medal"></i>
-                            <h4>First Focus</h4>
-                            <p>Complete your first focus session</p>
-                        </div>
-                        <div class="achievement-card earned">
-                            <i class="fas fa-fire"></i>
-                            <h4>3-Day Streak</h4>
-                            <p>Maintain goals for 3 consecutive days</p>
-                        </div>
-                        <div class="achievement-card">
-                            <i class="fas fa-crown"></i>
-                            <h4>Week Warrior</h4>
-                            <p>Complete all weekly goals</p>
-                        </div>
-                        <div class="achievement-card">
-                            <i class="fas fa-star"></i>
-                            <h4>Digital Minimalist</h4>
-                            <p>Stay under screen time goal for 7 days</p>
+                        <h3>Screen Time Limit</h3>
+                        <div class="goal-progress">
+                            <span id="screen-progress">4h 30m / 6h</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="screen-bar" style="width: 75%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="goal-creator">
-                <h3>Create New Goal</h3>
-                <form id="goal-form">
-                    <div class="form-group">
-                        <label for="goal-type">Goal Type</label>
-                        <select id="goal-type">
-                            <option value="screen-time">Screen Time Limit</option>
-                            <option value="focus-sessions">Focus Sessions</option>
-                            <option value="breaks">Mindful Breaks</option>
-                            <option value="app-limit">App Usage Limit</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="goal-target">Target</label>
-                        <input type="number" id="goal-target" placeholder="Enter target value">
-                    </div>
-                    <div class="form-group">
-                        <label for="goal-timeframe">Timeframe</label>
-                        <select id="goal-timeframe">
-                            <option value="daily">Daily</option>
-                            <option value="weekly">Weekly</option>
-                            <option value="monthly">Monthly</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="create-goal-btn">Create Goal</button>
-                </form>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <i class="fas fa-leaf"></i>
-                    <span>FocusFlow</span>
-                </div>
-                <p>Empowering mindful digital habits for a balanced life.</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#focus-mode">Focus Mode</a>
-                    <a href="#tracker">Tracker</a>
-                    <a href="#goals">Goals</a>
-                    <a href="#breaks">Breaks</a>
-                </div>
-            </div>
         </div>
-    </footer>
+    </main>
 
-    <!-- Break Reminder Modal -->
+    <!-- Break Modal -->
     <div id="break-modal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3>Time for a Mindful Break!</h3>
-                <span class="close-modal">&times;</span>
+            <h3>Time for a Break!</h3>
+            <p id="break-message">Take a moment to rest your eyes and stretch.</p>
+            <div class="modal-buttons">
+                <button id="take-break" class="btn btn-primary">Take Break (5 min)</button>
+                <button id="skip-break" class="btn btn-outline">Skip</button>
             </div>
-            <div class="modal-body">
-                <p id="break-suggestion">Take a moment to breathe and relax.</p>
-                <div class="break-timer">
-                    <span id="break-timer-display">5:00</span>
-                </div>
-                <div class="modal-actions">
-                    <button id="start-break" class="modal-btn primary">Start Break</button>
-                    <button id="skip-break" class="modal-btn secondary">Skip</button>
-                    <button id="snooze-break" class="modal-btn">Snooze 5 min</button>
-                </div>
-            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success">
+            <i class="fas fa-check-circle"></i>
+            <h3>Great Job!</h3>
+            <p id="success-message">You completed a focus session!</p>
+            <button id="close-success" class="btn btn-primary">Continue</button>
         </div>
     </div>
 
