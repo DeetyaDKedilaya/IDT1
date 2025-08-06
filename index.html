@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow - Simple Digital Detox</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-leaf"></i> FocusFlow</h1>
+            <p>Take control of your digital life</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <h2>Your Progress Today</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 id="focus-time">0 min</h3>
+                        <p>Focus Time</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-coffee"></i>
+                        <h3 id="break-count">0</h3>
+                        <p>Breaks Taken</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3 id="streak">0</h3>
+                        <p>Day Streak</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timer Section -->
+            <section class="timer-section">
+                <h2>Focus Timer</h2>
+                <div class="timer-card">
+                    <div class="timer-display">
+                        <span id="minutes">25</span>:<span id="seconds">00</span>
+                    </div>
+                    
+                    <div class="timer-buttons">
+                        <button id="start-btn" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <button id="pause-btn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline">
+                            <i class="fas fa-stop"></i> Reset
+                        </button>
+                    </div>
+
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-time="15">15 min</button>
+                        <button class="preset-btn active" data-time="25">25 min</button>
+                        <button class="preset-btn" data-time="45">45 min</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Break Reminder Section -->
+            <section class="break-section">
+                <h2>Break Reminders</h2>
+                <div class="break-card">
+                    <div class="break-settings">
+                        <label for="break-interval">Remind me every:</label>
+                        <select id="break-interval">
+                            <option value="30">30 minutes</option>
+                            <option value="60" selected>1 hour</option>
+                            <option value="90">1.5 hours</option>
+                        </select>
+                    </div>
+                    
+                    <div class="break-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="break-enabled" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Enable break reminders</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Goals Section -->
+            <section class="goals-section">
+                <h2>Daily Goals</h2>
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <h3>Focus Sessions</h3>
+                        <div class="goal-progress">
+                            <span id="session-progress">0 / 3</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="session-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card">
+                        <h3>Screen Time Limit</h3>
+                        <div class="goal-progress">
+                            <span id="screen-progress">4h 30m / 6h</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="screen-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Break Modal -->
+    <div id="break-modal" class="modal">
+        <div class="modal-content">
+            <h3>Time for a Break!</h3>
+            <p id="break-message">Take a moment to rest your eyes and stretch.</p>
+            <div class="modal-buttons">
+                <button id="take-break" class="btn btn-primary">Take Break (5 min)</button>
+                <button id="skip-break" class="btn btn-outline">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success">
+            <i class="fas fa-check-circle"></i>
+            <h3>Great Job!</h3>
+            <p id="success-message">You completed a focus session!</p>
+            <button id="close-success" class="btn btn-primary">Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
